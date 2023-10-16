@@ -1,0 +1,26 @@
+#define _USE_MATH_DEFINES
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+int main() {
+	
+ 
+	const double PI = M_PI;
+	const double LOAD_FACTOR = 0.64;
+	double RadGumballs = 0;
+	double VolJar = 0;
+	int NumGum = 0;
+
+
+	cout << "What is the radius of the gumballs and the volume of the jar?, please enter with a space in between" << endl;
+	cin >> RadGumballs >> VolJar;
+
+	
+
+	NumGum = (LOAD_FACTOR * VolJar) / (4.0/3.0 * PI * pow(RadGumballs,3));		
+
+	cout << "The jar has an estimated " << NumGum << " gumballs" << endl;
+
+	return 0;
+}
