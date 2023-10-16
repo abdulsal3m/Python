@@ -1,0 +1,72 @@
+def main():
+ 
+ app_name()
+
+ player_name = []
+ goals_scored = []
+ 
+
+ enter_info(player_name, goals_scored)
+ print_info(player_name, goals_scored)
+
+#--------------------------------------------------------------------------------------------------------------- 
+
+def app_name():
+ print("Welcome to the official La Liga scorekeeper app")
+ spacers()
+
+#--------------------------------------------------------------------------------------------------------------- 
+
+def enter_info(player_name_lst, goals_scored_lst):
+ 
+ flag = True
+
+ while(flag):
+  
+  plyr_name = str(input("Enter player name: "))
+  spacers()
+  gls_scored = int(input("Goals scored this season: "))
+  
+  player_name_lst.append(plyr_name)
+  goals_scored_lst.append(gls_scored)
+  spacers()
+  viewer_response = str(input("Would you like to continue? Y to continute or N to exit: "))
+  spacers()
+
+  if(viewer_response.upper() == 'N'):
+   flag = False
+ 
+#--------------------------------------------------------------------------------------------------------------- 
+
+def print_info(player_name_lst, goals_scored_lst):
+ print(player_name_lst)
+ print(goals_scored_lst)
+ 
+ spacers()
+
+ avg_goals = sum(goals_scored_lst)/len(goals_scored_lst)
+ print("Average goals for this season is", format(avg_goals, '.0f'))
+ 
+ spacers()
+ 
+ max_ = goals_scored_lst[0]
+ for ele in goals_scored_lst:
+ 	if(ele > max_):
+ 		max_ = ele 
+ print("Your top scorer has scored", max_, "goals this season")
+ 
+ spacers()
+
+ print("Thank you for using the official La Liga scorekeeper")
+#--------------------------------------------------------------------------------------------------------------- 
+
+def spacers():
+ print("---------------------------------------------------------------------------------------------------")
+
+
+main()
+
+
+
+
+
