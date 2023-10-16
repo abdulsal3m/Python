@@ -3,13 +3,16 @@ def main():
  print("Discriminant calculator")
  print("-----------------------")
  first_coefficient_of_x = int(input("Enter the 1st coefficient of X: "))
- second_coefficient_of_x = int(input("Enter the 2nd coeffiecient of X: "))
+ second_coefficient_of_x = int(input("Enter the 2nd coefficient of X: "))
  constant = int(input("Enter the constant: "))
  discriminant = second_coefficient_of_x ** 2 - 4 * first_coefficient_of_x * constant
  print("----------------------")
  print("Discriminant = ", discriminant)
- print("Discriminant>0 means 2 real solutions")
- print("Discriminant=0 means 1 real solution ")
- print("Discriminant<0 means 2 Imaginary solutions")
- print("----------------------")
+ if(discriminant > 0):
+  print("The function has 2 real solutions")
+ elif(discriminant == 0):
+  print("The function has 1 real solution")
+ elif(discriminant < 0):
+  print("The function has 2 imaginary solutions")
+ 
 main()
